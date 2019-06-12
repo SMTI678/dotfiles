@@ -1,6 +1,0 @@
-rofi.width: 30
-rofi.hide-scrollbar: true
-rofi.lines: 5
-rofi.color-normal:                   #ffffff,#000000,#ffffff,#ffadb5,#ffffff
-rofi.color-active:                   #ffffff,#268bd2,#ffffff,#268bd2,#ffffff
-rofi.color-window:                   #ffffff,#000000
