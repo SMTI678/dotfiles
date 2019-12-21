@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:/usr/share/spotify:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/michal/.oh-my-zsh"
@@ -8,7 +8,7 @@ export ZSH="/home/michal/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="gentoo"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -71,6 +71,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+compinit
 
 # User configuration
 
@@ -98,4 +99,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/scripts/compile.sh
+# source ~/scripts/compile.sh
+alias cp="cp -i"
+alias mv="mv -i"
+alias lock="~/scripts/lock.sh"
+
+c() {
+	clang++ -O3 -std=c++17 -Wall -Wextra -Wshadow -Wconversion -Wno-sign-conversion -Wfloat-equal -D_GLIBCXX_DEBUG -DDEBUG -fsanitize=address,undefined -ggdb3 $1.cpp -o $1
+}
+nc() {
+	g++ -O3 -std=c++17 -static -lm $1.cpp -o $1
+}
